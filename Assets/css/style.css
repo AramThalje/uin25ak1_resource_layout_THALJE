@@ -1,0 +1,47 @@
+:root{
+    --body_background_color: #E1E5EE;
+    --header-background_color: #2A324B;
+    --header-color: #fff;
+
+
+}
+
+body{
+    background-color: var(--body_background_color);
+}
+
+
+nav #knp-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    list-style: none;
+    cursor: pointer;
+    li{
+        font-size: 1.2rem;
+        
+        color: var(--header-color);
+        padding:  5px;
+        background-color: var(--header-background_color);
+        color: #fff;
+    }
+
+} 
+
+.innhold{
+    margin: 80px;
+    background-color: #fff;
+    padding: 0px 15px 10px;
+
+}
+.knp-section{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+   
+    
+}

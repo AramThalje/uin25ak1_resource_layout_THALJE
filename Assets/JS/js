@@ -1,0 +1,43 @@
+// resources.forEach((resource) => {
+//     // Vi kan legge til en h2-tagg med kategorien
+//     document.getElementById("categori").innerHTML += 
+//     `
+//     <h2>${resource.category}</h2>
+//     <p>${resource.text} <p/>
+//     <ul>
+//         <li><a href="#">${resource.sources[0].title} </a></li>
+//         <li><a href="#">${resource.sources[1].title} </a></li>
+//         <li><a href="#">${resource.sources[2].title} </a></li>
+//     </ul>
+    
+//     `;
+// })
+
+
+
+// Sort resources by category
+
+// Vi skal lage en tom variable
+// let sideHTML = "";
+// resources.map((resource, index) =>{
+//     // Legg til en h2-tagg med kategorien
+//     sideHTML += 
+//     `
+//     <h2>${resource.category}</h2>
+//     <p>${resource.text} <p/>
+//     <ul>
+//         <li><a href="#">${resource.sources[0].title} </a></li>
+//         <li><a href="#">${resource.sources[0].url}</a></li>
+        
+//     </ul>
+    
+//     `;
+    
+// })
+// console.log(sideHTML);
+// // Lager vi foreach metode for å hente data fra sub-Array
+
+
+// document.getElementById("categori").innerHTML = sideHTML;
+
+

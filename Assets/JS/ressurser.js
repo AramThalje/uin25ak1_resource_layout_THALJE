@@ -92,5 +92,61 @@ const resources = [
                 url: "https://www.section.io/engineering-education/getting-started-with-sanity-cms/"
             },
         ]
-    },
+    }
 ]
+
+// Lager en header med kategorier
+const header = document.getElementById("knp-section");
+resources.map((element) => {
+    const listElemet = document.createElement('li');
+    listElemet.innerHTML = element.category; // Kan vi bruke innerHTML eller TextContent for å vise innholdet
+    listElemet.onclick = () => viseInnhold(element.category);
+    header.appendChild(listElemet);
+   
+});
+
+
+const innhold = document.getElementById('categori');
+const viseInnhold = (category) => {
+    // Hent riktig resource basert på kategori
+    // skjekker om list elemt matcher kateg i kategori
+    const resource = resources.filter(res => res.category === category)[0]; 
+    innhold.innerHTML = 
+
+        `
+            <article>
+                <h2>${resource.category}</h2>
+                <p>${resource.text}</p>
+                <ul class="knp-inh">
+                    ${resource.sources.map(item => 
+                        `<li><a href="${item.url}">${item.title}</a></li>`
+                    ).join('')}
+                </ul>
+            </article>
+        `
+};
+
+
+
+/*const categori =  document.getElementById("categori");
+resources.map(underarray => 
+
+    underarray.map(item => {
+        const elementer = document.createElement('li');
+        elementer.innerHTML = 
+        `
+        <article>
+                <h2>${item.title}</h2>
+                <p>${item.text}</p>
+                <ul class="knp-inh">
+                    ${item.sources.map(source => `<li><a href = "${source.url}">${source.title}<a/></li>`)}
+                </ul>
+            </article>
+        `;
+        categori.appendChild(elementer);
+        
+       
+    })
+)
+*/
+
