@@ -1,61 +1,25 @@
-/* :root{
+:root{
     --body_background_color: #E1E5EE;
     --header-background_color: #2A324B;
-    --header-color: #fff;
+    --main-color: #fff;
 
 
 }
-
-body{
-    background-color: var(--body_background_color);
-}
-.container{
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-}
-
-#knp-section{
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    list-style: none;
-    
-} 
-.knpp-section{
-    text-decoration: none;
-    padding: 10px 20px;
-    background: #222;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    &:focus{
-        background-color: #cab9b9;
-        color: white;
-    }
-
-
-}
-li:focus{
-
-    background-color: #cab9b9;
-    color: white;
-
-} */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e9edf5;
+    font-family: "Roboto", serif;
+    background-color: var(--body_background_color); 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
+
 }
 .container {
     width: 800px;
     height: 400px;
-    background-color: white;
+    background-color: var(--main-color);
     
 
     
@@ -68,27 +32,25 @@ nav ul {
     justify-content: space-between;
     margin: 0;
     
-    background-color: #e9edf5;
+    background-color: var(--body_background_color);
 }
 nav ul li {
     padding: 10px 35px;
-    background-color: #2c3550;
+    background-color: var(--header-background_color);
     color: white;
     cursor: pointer;
     
     font-weight: bold;
 }
 nav ul li.active {
-    background-color: white;
+    background-color: var(--main-color);
     color: black;
 }
 
 article {
     padding: 20px;
 }
-h2 {
-    font-size: 24px;
-}
+
 ul {
     padding-left: 20px;
 }
