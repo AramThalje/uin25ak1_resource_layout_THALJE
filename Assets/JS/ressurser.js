@@ -95,39 +95,45 @@ const resources = [
     }
 ]
 
-// Lager en header med kategorier
 const header = document.getElementById("knp-section");
+        resources.forEach(element => {
+            const listElement = document.createElement('li');
+            listElement.textContent = element.category;
+            listElement.onclick = () => viseInnhold(element.category, listElement);
+            header.appendChild(listElement);
+        });
+
+// // Lager en header med kategorier
+/*const header = document.getElementById("knp-section");
 resources.map((element) => {
     const listElemet = document.createElement('li');
     listElemet.innerHTML = element.category; // Kan vi bruke innerHTML eller TextContent for å vise innholdet
-    listElemet.onclick = () => viseInnhold(element.category);
+    listElemet.onclick = () => viseInnhold(element.category, listElemet);
+    listElemet.className="knpp-section";
     header.appendChild(listElemet);
-   
-});
+});*/
 
 
 const innhold = document.getElementById('categori');
-const viseInnhold = (category) => {
-    // Hent riktig resource basert på kategori
-    // skjekker om list elemt matcher kateg i kategori
-    const resource = resources.filter(res => res.category === category)[0]; 
-    innhold.innerHTML = 
+        function viseInnhold(category, clickedElement) {
+            document.querySelectorAll('nav ul li').forEach(li => li.classList.remove('active'));
+            clickedElement.classList.add('active');
 
-        `
-            <article>
-                <h2>${resource.category}</h2>
-                <p>${resource.text}</p>
-                <ul class="knp-inh">
-                    ${resource.sources.map(item => 
-                        `<li><a href="${item.url}">${item.title}</a></li>`
-                    ).join('')}
-                </ul>
-            </article>
-        `
-};
+            const resource = resources.find(res => res.category === category);
+            innhold.innerHTML = `
+                <article>
+                    <h2>${resource.category}</h2>
+                    <p>${resource.text}</p>
+                    <ul>
+                        ${resource.sources.map(item => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join('')}
+                    </ul>
+                </article>
+            `;
+        }
+        viseInnhold(resources[0].category, header.children[0]);
 
 
-
+// Eller
 /*const categori =  document.getElementById("categori");
 resources.map(underarray => 
 
